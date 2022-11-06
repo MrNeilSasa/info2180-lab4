@@ -1,0 +1,10 @@
+body{
+    background-color: grey;
+}
+
+.btn{
+    background-color: gray;
+    border-color: gray;
+    border-radius: 5px;
+    width: 80px;
+}
