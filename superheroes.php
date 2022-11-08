@@ -63,10 +63,37 @@ $superheroes = [
   ], 
 ];
 
+
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+$heroname = filter_input(INPUT_POST, 'heroname', FILTER_SANITIZE_STRING);   
+$x = false;
+$y = true; 
+
+if(empty($heroname)){
+    for ($row = 0; $row < 10; $row++) {
+        echo "<ul>";
+        echo "<li>".$superheroes[$row]['alias']."</li>";
+        echo "</ul>";
+    }
+    $y = false;
+}
+
+
+
+for ($i = 0; $i < 10; $i++) {
+    if( in_array($heroname, $superheroes[$i])){
+        echo "<h3>".$superheroes[$i]['alias']."<h3>";
+        $x= true;
+    }   
+  }
+
+if($x === false and $y === true){
+    echo "<h4>".'Superhero not found'."<h4>";
+}  
+  
+?>
+
+
+

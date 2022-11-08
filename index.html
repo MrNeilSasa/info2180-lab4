@@ -8,10 +8,27 @@
     </head>
     <body>
         <div class="container">
-            <h1>Avengers Character Sheet</h1>
-            <button type="button" id="searchBtn" class="btn">Search</button>
+            <header>
+                <h1>Avengers Character Sheet</h1>
+            </header>
+            
+            <div class="search" id="search">
+                <form action="superheroes.php" method="post">
+                <h3>Search by Full Name or Alias</h3>
+                <input type="text" id="heroname" name="full name or alias" placeholder="E.g. Captain America or Steve Rogers">
+                <button type="button" id="searchBtn" class="btn">Search</button>
 
-            <div id="heroList"></div>
+                </form>
+                
+
+            </div>
+
+            
+            <h2>RESULT</h2>
+            
+            <div id="result">
+
+            </div>
         </div>
     </body>
 </html>
